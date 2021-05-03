@@ -58,13 +58,6 @@ button{
     cursor: pointer;
     border-radius: 8px;
 
-    /* node_modules
-
-    cypress.json
-    package-lock.json
-    package.json */
-
-
 }
 
 @media screen and (max-width: 750px){
