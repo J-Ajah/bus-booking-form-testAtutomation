@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+    <!--the background color design-->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    <!--the background color design-->
+        <div class="box">
+            <div class="container">
+                <h1 class="title">Bus Ticketing Form</h1><br>
+              <div class="main">
+                <div class="username">
+                    <label for="">Full Name</label><br>
+                    <input id="fName" type="text">
+                </div>
+                <div class="trip">
+                <input type="radio" name="trip" id="one-way" value="oneway">1 way Trip</input>
+                <input type="radio" name="trip" id="round-Trip" value="roundtrip">Round Trip</input>
+                </div>
+                <div class="dateBook">
+                    <label for="">Date of Trip</label><br>
+                    <input type="date" id="date">
+                </div>
+                <div class="attend">
+                    <label for="">Number of People</label><br>
+                    <input type="number" min="1" max="45" id="no-of-people">
+                </div>
+                </div>
+                <div class="comment">
+                    <label for="">Feedback</label><br>
+                    <textarea name="comment" id="" cols="45" rows="10" id="comments"></textarea>
+                </div>
+                <button id="btn-submit">Submit</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
