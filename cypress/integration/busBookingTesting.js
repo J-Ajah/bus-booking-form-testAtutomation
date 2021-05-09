@@ -32,7 +32,7 @@ context("Bus booking form validation", () => {
             cy.get(".error-alert").should("be.visible");
         })
 
-        it("Sucessful submission of form for round trip travellers with no feedBack", () => {
+        it.only("Sucessful submission of form for round trip travellers with no feedBack", () => {
 
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-09");
@@ -44,7 +44,7 @@ context("Bus booking form validation", () => {
             cy.get(".error-alert").should("be.visible");
         })
 
-        it("Sucessful submission of form for one trip travellers with no feedBack", () => {
+        it.only("Sucessful submission of form for one trip travellers with no feedBack", () => {
 
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-09");
@@ -60,7 +60,7 @@ context("Bus booking form validation", () => {
 
 
     describe("Negative scenarios", () => {
-        it("Should not submit when name field is empty", () => {
+        it.only("Should not submit when name field is empty", () => {
             // cy.get('#fName').type("Victor");
             
             cy.get('#date').type("2021-09-09");
@@ -71,7 +71,7 @@ context("Bus booking form validation", () => {
 
         });
 
-        it("An error message should be shown to the user when  username is omitted", () => {
+        it.only("An error message should be shown to the user when  username is omitted", () => {
             // cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-30");
             cy.get('#round-Trip').click();
@@ -84,7 +84,7 @@ context("Bus booking form validation", () => {
 
         });
 
-        it("Should not submit when date is not empty", () => {
+        it.only("Should not submit when date is not empty", () => {
             cy.get('#fName').type("Victor");
             cy.get('#round-Trip').click();
             cy.get('#no-of-people').type(6);
@@ -93,7 +93,7 @@ context("Bus booking form validation", () => {
             cy.get('#date-error').should("be.visible")
         });
 
-        it("Should not submit when trip type is not selected", () => {
+        it.only("Should not submit when trip type is not selected", () => {
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-30");
             cy.get('#no-of-people').type(6);
@@ -103,7 +103,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when No of people is empty", () => {
+        it.only("Should not submit when No of people is empty", () => {
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-30");
             cy.get('#round-Trip').click();
@@ -114,7 +114,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only textarea is filled", () => {
+        it.only("Should not submit when only textarea is filled", () => {
            
             cy.get('textarea').type("Trip to Kumasi");
             cy.get('#btn-submit').click();
@@ -126,7 +126,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only No of people is filled", () => {
+        it.only("Should not submit when only No of people is filled", () => {
             
             cy.get('#no-of-people').type(6);
             cy.get('#btn-submit').click();
@@ -134,7 +134,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only date is filled", () => {
+        it.only("Should not submit when only date is filled", () => {
           
             cy.get('#date').type("2021-09-30");
             cy.get('#btn-submit').click();
@@ -145,7 +145,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only date and No of people is filled", () => {
+        it.only("Should not submit when only date and No of people is filled", () => {
             cy.get('#date').type("2021-09-30");
             cy.get('#no-of-people').type(6);
             cy.get('#btn-submit').click();
@@ -155,7 +155,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only name and No of people is filled  ", () => {
+        it.only("Should not submit when only name and No of people is filled  ", () => {
             cy.get('#fName').type("Victor");
             cy.get('#no-of-people').type(6);
             cy.get('#btn-submit').click();
@@ -166,7 +166,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only date and name is filled  ", () => {
+        it.only("Should not submit when only date and name is filled  ", () => {
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-09-30");
             cy.get('#btn-submit').click();
@@ -176,7 +176,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only date and comment is filled  ", () => {
+        it.only("Should not submit when only date and comment is filled  ", () => {
             cy.get('#date').type("2021-09-30");
             cy.get('textarea').type("Travelling back to Kumasi");
             cy.get('#btn-submit').click();
@@ -188,7 +188,7 @@ context("Bus booking form validation", () => {
 
 
 
-        it("Should not submit when only name and comment is filled  ", () => {
+        it.only("Should not submit when only name and comment is filled  ", () => {
             cy.get('#fName').type("Victor");
             cy.get('textarea').type("Travelling back to Kumasi");
             cy.get('#btn-submit').click();
@@ -198,7 +198,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when only no of people and comment is filled  ", () => {
+        it.only("Should not submit when only no of people and comment is filled  ", () => {
             cy.get('#no-of-people').type(6);
             cy.get('textarea').type("Travelling back to Kumasi");
             cy.get('#btn-submit').click();
@@ -209,12 +209,12 @@ context("Bus booking form validation", () => {
         });
 
         //More on Week 2  assertions assignment
-        it("Should accept username as string", () => {
+        it.only("Should accept username as string", () => {
             cy.get('[id="fName"]').type("Justice1");
             cy.get('[id="fName"]').should("have.value", "Justice1");
         })
 
-        it("A single type of trip is selected", () => {
+        it.only("A single type of trip is selected", () => {
             cy.get('[id="fName"]').type("Justice");
             cy.get('[id="one-way"]').click();
             cy.get('[id="one-way"]').should("be.checked");
@@ -233,7 +233,7 @@ context("Bus booking form validation", () => {
         });
 
 
-        it("Should not submit when no of people is greater than 21", () => {
+        it.only("Should not submit when no of people is greater than 21", () => {
             cy.get('#fName').type("Victor");
             cy.get('#date').type("2021-05-09");
             cy.get('#one-way').click();
