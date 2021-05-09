@@ -4,15 +4,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body{
+    margin: 0;
+    padding:0;
 }
 
 .box{
-    width: 100%;
+    width: 98.5%;
     height: 100vh;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(228, 228, 228);
 }
 
 .container{
@@ -21,11 +27,10 @@
     padding: 10px;
     position: relative;
     top: 50%;
-    left: 15%;
-    /*transform: translate(-50%, -50%);*/
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align:center;
     background: rgb(244, 250, 255);
-    backdrop-filter: blur(5px);
     box-shadow: 0 7px 29px 0px rgba(109, 106, 106, 0.26);
     border: 1px solid rgba(255,255,255,0.2);
     border-right: 1px solid rgba(255,255,255,0.2);
@@ -34,7 +39,28 @@
     border: transparent;
 
 }
+.error-alert{
+    width: 30%;
+    height: 20%;
+    background-color: rgb(244, 250, 255);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 4px;
+}
 
+.error-alert h1{
+    position: relative;
+    top: 0;
+    color: white;
+    text-shadow: 0px 7px 29px  black;
+    bottom: 0;
+    background-color: rgb(189, 185, 185);
+    line-height: auto ;
+    vertical-align:bottom;
+}
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -43,13 +69,22 @@ div{
     margin: 0.7rem;
 }
 
+label{
+    font-weight: 540;
+}
+
 input, textarea{
-    border:1px solid #333;
+    border:1px solid rgb(163, 163, 163);
     padding: .5rem;
+}
+
+input,textarea:focus{
+    border: solid 1px rgb(18, 161, 78);
+    outline: none;
 }
 button{
     padding: 5px;
-    background-color: rgb(4, 55, 196);
+    background-color: rgb(7, 143, 79);
     color:white;
     outline: none;
     border: transparent;
@@ -60,9 +95,25 @@ button{
 
 }
 
+.errorMsg{
+    color: red;
+
+}
+
+.hide{
+    display:none;
+}
+
+p{
+    margin-top: 5px;
+}
 @media screen and (max-width: 750px){
     .main{
         display: grid;
         grid-template-columns: 1fr;
     }
+    
+.error-alert{
+    width: 50%;
+}
 }  
